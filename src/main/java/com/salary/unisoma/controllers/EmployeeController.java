@@ -29,7 +29,11 @@ public class EmployeeController {
     }
 
     @GetMapping("/employee/{id}")
-    public ResponseEntity<Optional<EmployeeDTO>> findById(@PathVariable Long id){
+    public ResponseEntity findById(@PathVariable Long id){
+        Optional<EmployeeDTO> employee = employeeService.findById(id);
+        if(!employee.isPresent()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Employee Not Found");
+        }
         return ResponseEntity.status(HttpStatus.OK).body(employeeService.findById(id));
     }
 
