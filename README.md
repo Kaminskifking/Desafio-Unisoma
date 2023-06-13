@@ -1,5 +1,10 @@
 ## Desafio-Unisoma
 
+
+## Setup
+
+- [ ] `docker-compose up`
+
 ## Rotas
 
 **Criar Funcionário** | /api/employee
