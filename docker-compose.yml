@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres:15.3
+    container_name: unisoma
+    environment:
+      - POSTGRES_PASSWORD=O566452
+      - POSTGRES_DB=container_unisoma
+    ports:
+      - "5432:5432"
